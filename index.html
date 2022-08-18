@@ -37,7 +37,7 @@
           </div>
         </div>
       </div>
-      <form class="information_container">
+      <!-- <form class="information_container active">
         <div class="name_container">
           <label for="name">cardholder name</label>
           <input
@@ -56,14 +56,14 @@
         </div>
         <div class="exp_cvc_container">
           <div class="exp_container">
-            <label for="exp_date">exp. date (mm/yy)</label>
+            <label for="exp_label">exp. date (mm/yy)</label>
             <div class="exp_inputs_container">
               <input type="number" class="mm_input" placeholder="MM" />
               <input type="number" class="yy_input" placeholder="YY" />
             </div>
           </div>
           <div class="cvc_container">
-            <label for="cvc">cvc</label>
+            <label for="cvc_label">cvc</label>
             <div class="cvc_input_wrapper">
               <input type="number" class="cvc_input" placeholder="e.g. 123" />
             </div>
@@ -72,11 +72,22 @@
         <div class="card_btn_wrapper">
           <button class="card_btn">Confirm</button>
         </div>
-      </form>
+      </form> -->
+
+      <div class="complete_details_container">
+        <div class="complete_img_wrapper">
+          <img src="./images/icon-complete.svg" alt="icon complete" />
+        </div>
+        <div class="topline-wrapper">
+          <p class="topline">Thank you!</p>
+        </div>
+        <div class="bottomline-wrapper">
+          <p class="bottomline">We've added your card details</p>
+        </div>
+        <div class="card_complete_btn_wrapper">
+          <button class="card_complete_btn">Continue</button>
+        </div>
+      </div>
     </main>
-
-    <!-- Completed state start -->
-
-    <!-- Thank you! We've added your card details Continue -->
   </body>
 </html>
