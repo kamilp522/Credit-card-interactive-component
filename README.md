@@ -36,8 +36,8 @@ Users should be able to:
 
 ### Links
 
-- Solution URL: [https://kamilp522.github.io/Credit-card-interactive-component]
-- Live Site URL: [Add live site URL here](https://your-live-site-url.com)
+- Solution URL: [https://www.frontendmentor.io/solutions/credit-card-component-with-css-custom-properties-and-vanilla-js-NBuMRrSbkZ]
+- Live Site URL: [https://kamilp522.github.io/Credit-card-interactive-component]
 
 ## My process
 
