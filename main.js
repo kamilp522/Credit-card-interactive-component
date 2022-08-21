@@ -46,13 +46,13 @@ const formatCardNumber = (value) => {
 
 cvc_input.oninput = () => {
   cvc_card_back.innerText = cvc_input.value;
-  if (cvc_input.value !== 0) cvc_blank_error.classList.add("hidden");
+  if (cvc_input.value != 0) cvc_blank_error.classList.add("hidden");
   if (cvc_input.value == 0) cvc_blank_error.classList.remove("hidden");
 };
 
 cardholder_input.oninput = () => {
   card_front_name.innerText = cardholder_input.value;
-  if (cardholder_input.value !== 0)
+  if (cardholder_input.value != 0)
     cardholder_blank_error.classList.add("hidden");
   if (cardholder_input.value == 0)
     cardholder_blank_error.classList.remove("hidden");
@@ -60,20 +60,22 @@ cardholder_input.oninput = () => {
 
 card_number_input.oninput = () => {
   card_front_number.innerText = formatCardNumber(card_number_input.value);
-  if (cvc_input.value !== 0) cvc_blank_error.classList.add("hidden");
-  if (cvc_input.value == 0) cvc_blank_error.classList.remove("hidden");
+  if (card_number_input.value != 0)
+    card_number_blank_error.classList.add("hidden");
+  if (card_number_input.value == 0)
+    card_number_blank_error.classList.remove("hidden");
 };
 
 mm_input.oninput = () => {
   card_front_date_mm.innerText = mm_input.value;
-  if (cvc_input.value !== 0) cvc_blank_error.classList.add("hidden");
-  if (cvc_input.value == 0) cvc_blank_error.classList.remove("hidden");
+  if (mm_input.value != 0) exp_date_blank_error.classList.add("hidden");
+  if (mm_input.value == 0) exp_date_blank_error.classList.remove("hidden");
 };
 
 yy_input.oninput = () => {
   card_front_date_yy.innerText = yy_input.value;
-  if (cvc_input.value !== 0) cvc_blank_error.classList.add("hidden");
-  if (cvc_input.value == 0) cvc_blank_error.classList.remove("hidden");
+  if (yy_input.value != 0) exp_date_blank_error.classList.add("hidden");
+  if (yy_input.value == 0) exp_date_blank_error.classList.remove("hidden");
 };
 
 const submitForm = (e) => {

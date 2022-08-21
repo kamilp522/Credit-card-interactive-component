@@ -31,12 +31,12 @@ Users should be able to:
 
 ### Screenshot
 
-![](./screenshots/screenshot_01.png)
-![](./screenshots/screenshot_02.png)
+![screenshot_01](./screenshots/screenshot_01.png)
+![screenshot_02](./screenshots/screenshot_02.png)
 
 ### Links
 
-- Solution URL: [Add solution URL here](https://your-solution-url.com)
+- Solution URL: [https://kamilp522.github.io/Credit-card-interactive-component]
 - Live Site URL: [Add live site URL here](https://your-live-site-url.com)
 
 ## My process
