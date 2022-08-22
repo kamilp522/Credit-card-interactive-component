@@ -12,16 +12,10 @@ const card_front_name = document.querySelector(".card_front_name");
 const card_front_date_mm = document.querySelector(".card_front_date .mm");
 const card_front_date_yy = document.querySelector(".card_front_date .yy");
 
-const cardholder_blank_error = document.querySelector(
-  ".name_container .blank_error"
-);
-const card_number_blank_error = document.querySelector(
-  ".card_num_container .blank_error"
-);
-const exp_date_blank_error = document.querySelector(
-  ".exp_container .blank_error"
-);
-const cvc_blank_error = document.querySelector(".cvc_container .blank_error");
+const cardholder_error = document.querySelector(".name_container .error");
+const card_number_error = document.querySelector(".card_num_container .error");
+const exp_date_error = document.querySelector(".exp_container .error");
+const cvc_error = document.querySelector(".cvc_container .error");
 
 const submit_btn = document.querySelector(".card_btn");
 const information_form = document.querySelector(".information_form");
@@ -44,40 +38,6 @@ const formatCardNumber = (value) => {
   );
 };
 
-cvc_input.oninput = () => {
-  cvc_card_back.innerText = cvc_input.value;
-  if (cvc_input.value != 0) cvc_blank_error.classList.add("hidden");
-  if (cvc_input.value == 0) cvc_blank_error.classList.remove("hidden");
-};
-
-cardholder_input.oninput = () => {
-  card_front_name.innerText = cardholder_input.value;
-  if (cardholder_input.value != 0)
-    cardholder_blank_error.classList.add("hidden");
-  if (cardholder_input.value == 0)
-    cardholder_blank_error.classList.remove("hidden");
-};
-
-card_number_input.oninput = () => {
-  card_front_number.innerText = formatCardNumber(card_number_input.value);
-  if (card_number_input.value != 0)
-    card_number_blank_error.classList.add("hidden");
-  if (card_number_input.value == 0)
-    card_number_blank_error.classList.remove("hidden");
-};
-
-mm_input.oninput = () => {
-  card_front_date_mm.innerText = mm_input.value;
-  if (mm_input.value != 0) exp_date_blank_error.classList.add("hidden");
-  if (mm_input.value == 0) exp_date_blank_error.classList.remove("hidden");
-};
-
-yy_input.oninput = () => {
-  card_front_date_yy.innerText = yy_input.value;
-  if (yy_input.value != 0) exp_date_blank_error.classList.add("hidden");
-  if (yy_input.value == 0) exp_date_blank_error.classList.remove("hidden");
-};
-
 const submitForm = (e) => {
   e.preventDefault();
 
@@ -95,6 +55,70 @@ const submitForm = (e) => {
   }
 };
 
+const errorOutputHandler = (
+  input,
+  cardText,
+  error,
+  isNumberValue,
+  isCardFormat
+) => {
+  if (isCardFormat) cardText.innerText = formatCardNumber(input.value);
+  else cardText.innerText = input.value;
+
+  if (input.value != 0) error.classList.add("hidden");
+
+  if (isNumberValue) {
+    if (!Number(input.value)) {
+      error.innerText = "Wrong format, numbers only";
+      error.classList.remove("hidden");
+    }
+  }
+
+  if (!isNumberValue) {
+    if (/\d/.test(input.value)) {
+      error.innerText = "Wrong format, letters only";
+      error.classList.remove("hidden");
+    }
+  }
+
+  if (input.value == 0) {
+    error.classList.remove("hidden");
+    error.innerText = "Can't be blank";
+  }
+};
+
 // EVENTS
+
+cvc_input.oninput = () => {
+  errorOutputHandler(cvc_input, cvc_card_back, cvc_error, true, false);
+};
+
+cardholder_input.oninput = () => {
+  errorOutputHandler(
+    cardholder_input,
+    card_front_name,
+    cardholder_error,
+    false,
+    false
+  );
+};
+
+card_number_input.oninput = () => {
+  errorOutputHandler(
+    card_number_input,
+    card_front_number,
+    card_number_error,
+    true,
+    true
+  );
+};
+
+mm_input.oninput = () => {
+  errorOutputHandler(mm_input, card_front_date_mm, exp_date_error, true, false);
+};
+
+yy_input.oninput = () => {
+  errorOutputHandler(yy_input, card_front_date_yy, exp_date_error, true, false);
+};
 
 submit_btn.addEventListener("click", submitForm);

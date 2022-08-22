@@ -42,7 +42,7 @@
       <div class="information_container">
         <form class="information_form active" onsubmit="checkValidation">
           <div class="name_container">
-            <label for="name">cardholder name</label>
+            <label for="cardholder_input">cardholder name</label>
             <input
               aria-invalid="false"
               type="text"
@@ -50,18 +50,18 @@
               class="cardholder_input"
               placeholder="e.g. Jane Appleseed"
             />
-            <p class="blank_error hidden">Can't be blank</p>
+            <p class="error hidden">Can't be blank</p>
           </div>
           <div class="card_num_container">
-            <label for="number">card number</label>
+            <label for="card_number_input">card number</label>
             <input
               aria-invalid="false"
-              type="number"
+              type="text"
               maxlength="16"
               class="card_number_input"
               placeholder="e.g. 1234 5678 9123 0000"
             />
-            <p class="blank_error hidden">Can't be blank</p>
+            <p class="error hidden">Can't be blank</p>
           </div>
           <div class="exp_cvc_container">
             <div class="exp_container">
@@ -69,34 +69,34 @@
               <div class="exp_inputs_container">
                 <input
                   aria-invalid="false"
-                  type="number"
+                  type="text"
+                  maxlength="2"
                   class="mm_input"
                   placeholder="MM"
                 />
 
                 <input
                   aria-invalid="false"
-                  min="2022"
-                  max="2032"
-                  type="number"
+                  type="text"
+                  maxlength="2"
                   class="yy_input"
                   placeholder="YY"
                 />
               </div>
-              <p class="blank_error hidden">Can't be blank</p>
+              <p class="error hidden">Can't be blank</p>
             </div>
             <div class="cvc_container">
               <label for="cvc_label">cvc</label>
               <div class="cvc_input_wrapper">
                 <input
                   aria-invalid="false"
-                  type="number"
+                  type="text"
                   class="cvc_input"
                   maxlength="3"
                   placeholder="e.g. 123"
                 />
               </div>
-              <p class="blank_error hidden">Can't be blank</p>
+              <p class="error hidden">Can't be blank</p>
             </div>
           </div>
           <div class="card_btn_wrapper">

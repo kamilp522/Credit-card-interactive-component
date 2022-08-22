@@ -229,19 +229,24 @@ main {
   margin-right: 1em;
 }
 
-.blank_error {
+.error {
   color: red;
   font-size: 0.75rem;
-  line-height: 0.75rem;
+  height: 0.75rem;
 }
 
-.blank_error.hidden {
+.error.hidden {
   font-size: 0;
 }
 
-.name_container .blank_error,
-.card_num_container .blank_error {
+.name_container .error,
+.card_num_container .error {
   transform: translateY(40%);
+}
+
+.cvc_container .error,
+.exp_container .error {
+  height: 1.5rem;
 }
 
 /* INFORMATION CONTAINER */
